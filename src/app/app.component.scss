@@ -1,0 +1,97 @@
+// User menu styles
+.user-menu {
+    .menu-header {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+  
+      ion-avatar {
+        width: 48px;
+        height: 48px;
+      }
+  
+      .user-info {
+        p {
+          margin: 0;
+          display: flex;
+          text-align: center;
+          font-weight: 500;
+          color: #2c3e50;
+        }
+      }
+    }
+  }
+
+  ion-content {
+    --padding-top: 56px;
+  }
+ion-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+    ion-toolbar {
+      --background: var(--primary-gradient);
+      --color: #ffffff;
+      --border-width: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .user-button {
+      --padding-start: 4px;
+      --padding-end: 4px;
+  
+      ion-avatar {
+        width: 36px;
+        height: 36px;
+        border: 2px solid #ffffff;
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  
+    .cart-button mat-icon {
+      color: #ffffff;
+    }
+  }
+  ion-button[matMenuTriggerFor] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    margin-left: 8px;
+  }
+  ion-back-button {
+    --color: #ffffff;
+    --icon-font-size: 24px;
+    --padding-start: 0;
+    
+    &::part(native) {
+      padding-left: 8px;
+    }
+  }
+  
+  .back-button {
+    display: block;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  :host {
+    --page-padding: 16px;
+    --card-border-radius: 20px;
+    --primary-color: #ff6b6b;
+    --secondary-color: #f94d8b;
+    --text-color: #2c3e50;
+  }
+  .custom-header {
+    background: linear-gradient(to right, #ff6b6b, #f94d8b); // Cambia esto a tu preferencia
+    color: #ffffff; // Color del texto
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

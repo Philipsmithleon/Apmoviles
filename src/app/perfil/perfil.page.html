@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="light" fill="clear" (click)="volver()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+        Volver
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="perfil-container">
+    <form [formGroup]="perfilForm">
+      <div class="input-group">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="nombre" [@slideAnimation]="animationStateNombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input formControlName="apellido" [@slideAnimation]="animationStateApellido"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="input-group">
+        <ion-item>
+          <ion-label>Nivel de Educación</ion-label>
+          <ion-select formControlName="nivelEducacion">
+            <ion-select-option *ngFor="let nivel of nivelesEducacion" [value]="nivel">{{ nivel }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de Nacimiento</ion-label>
+          <input formControlName="fechaNacimiento" [matDatepicker]="picker" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </ion-item>
+      </div>
+    </form>
+
+    <div class="button-group">
+      <ion-button expand="full" color="danger" (click)="limpiarCampos()">Limpiar</ion-button>
+      <ion-button expand="full" color="primary" (click)="mostrarDatos()">Mostrar</ion-button>
+    </div>
+  </div>
+</ion-content>

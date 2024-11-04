@@ -1,20 +1,76 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="hero-section">
+    <h1 class="fade-in">Descubre nuestras categorías</h1>
+    <p class="fade-in">Encuentra tus productos favoritos</p>
   </div>
+
+  <!-- Categorias -->
+  <div class="categories-container">
+    <mat-card 
+      *ngFor="let category of categorias; let i = index" 
+      class="category-card slide-up"
+      [style.--animation-delay]="i * 0.1 + 's'"
+      (click)="verProductosPorCategoria(category)"
+      matRipple
+      [ngStyle]="{ '--animation-delay': category.animationDelay }"
+    >
+      <img mat-card-image [src]="category.imagen" [alt]="category.nombre" />
+      <mat-card-content>
+        <h2>{{ category.nombre }}</h2>
+        <p>{{ category.descripcion }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+<!-- Destacados -->
+<div class="featured-products">
+  <div class="section-header">
+    <h2>Destacados</h2>
+  </div>
+  
+  <div class="products-grid">
+    <!-- Promos -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/pastel-chocolate.png" alt="Producto">
+        <div class="product-content">
+          <div class="top-badges">
+            <span class="discount-badge">-20%</span>
+            <button class="favorite-button">
+              <ion-icon name="heart-outline"></ion-icon>
+            </button>
+          </div>
+          <div class="product-info">
+            <h3>Pastel de Chocolate</h3>
+            <div class="price-row">
+              <span class="current-price">$2.500</span>
+              <span class="original-price">$3.500</span>
+            </div>
+            <a href="#" class="action-button">
+              <ion-icon name="cart-outline"></ion-icon>
+              Añadir al carrito
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="promotions-section">
+    <h2>Promociones</h2>
+    <div class="promotions-grid">
+      <div class="promo-card">
+        <img src="assets/pasteles.png" alt="Promoción" />
+        <div class="promo-content">
+          <h3>Oferta Especial</h3>
+          <p>20% de descuento en todos los pasteles</p>
+          <a href="#" class="promo-button">Ver oferta</a>
+        </div>
+      </div>
+      <!-- ---------------------------- -->
+    </div>
+  </div>
+
+
+  
 </ion-content>

@@ -1,0 +1,45 @@
+.login-container {
+    --background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  }
+  
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  }
+  
+  .subtitle {
+    color: #888;
+    margin-bottom: 30px;
+  }
+  
+  .error-text {
+    color: var(--ion-color-danger);
+    margin-top: 10px;
+  }
+  
+  ion-item {
+    margin-bottom: 15px;
+    --background: rgba(255,255,255,0.7);
+    --border-radius: 10px;
+  }
+  
+  ion-button {
+    --border-radius: 10px;
+    margin-top: 20px;
+  }
