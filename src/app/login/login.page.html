@@ -1,6 +1,5 @@
 <ion-content class="ion-padding login-container">
   <div class="login-wrapper">
-    <!-- Logo de la pastelería -->
     <div class="logo-container">
       <img src="assets/logo.png" alt="Logo Pastelería">
     </div>
@@ -10,42 +9,48 @@
       <p class="ion-text-center subtitle">Pastelería Artesanal</p>
     </ion-text>
 
-    <form>
+    <form [formGroup]="loginForm">
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input 
-          [(ngModel)]="username" 
-          name="username"
+        <ion-input
+          formControlName="username"
           type="text"
           class="animated"
-          required 
-          minlength="3" 
+          required
+          minlength="3"
           maxlength="8"
+          placeholder="Ingrese su usuario"
         ></ion-input>
       </ion-item>
-      
+
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input 
-          [(ngModel)]="password" 
-          name="password"
-          type="password"
+        <ion-input
+          formControlName="password"
+          [type]="showPassword ? 'text' : 'password'"
           class="animated"
-          required 
-          minlength="4" 
+          required
+          minlength="4"
           maxlength="4"
+          placeholder="Ingrese su contraseña"
         ></ion-input>
       </ion-item>
-      
-      
+
       <div class="ion-padding-top">
-        <ion-button 
-          expand="block" 
+        <ion-button
+          expand="block"
           color="primary"
           (click)="login()"
         >
           Iniciar Sesión
         </ion-button>
+        <ion-button
+        expand="block"
+        color="secondary"
+        (click)="Register()"
+      >
+        Registrarse
+      </ion-button>
       </div>
 
       <p *ngIf="loginError" class="error-text ion-text-center">

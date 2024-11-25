@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.authService.username$.subscribe(username => {
       this.username = username;
     });
-    const savedUsername = this.authService.getUsername();
+    const savedUsername = this.authService.getCurrentUsername();
     if (savedUsername) {
       this.username = savedUsername;
     }
@@ -58,6 +58,14 @@ export class AppComponent implements OnInit {
 
   gotoPerfil(){
     this.router.navigate(['/perfil']);
+  }
+
+  gotoCam(){
+    this.router.navigate(['/camara']);
+  }
+
+  gotoGeo(){
+    this.router.navigate(['/geolocalizacion']);
   }
 
   gotoPedidos(){

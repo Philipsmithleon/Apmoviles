@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cámara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tomar Foto</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="block" (click)="takePicture()" color="primary">
+        <ion-icon name="camera-outline" slot="start"></ion-icon>
+        Capturar Imagen
+      </ion-button>
+
+      <div class="image-container" *ngIf="capturedImage">
+        <img [src]="capturedImage" alt="Foto capturada"/>
+        
+        <ion-button expand="block" color="danger" (click)="capturedImage = undefined" class="ion-margin-top">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          Eliminar Foto
+        </ion-button>
+      </div>
+
+      <div class="no-image" *ngIf="!capturedImage">
+        <ion-icon name="camera"></ion-icon>
+        <p>No hay imagen capturada</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

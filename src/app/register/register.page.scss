@@ -1,0 +1,16 @@
+/* register.page.scss */
+.validation-error {
+    color: var(--ion-color-danger);
+    font-size: 0.8em;
+    margin: 5px 15px;
+  }
+  
+  form {
+    ion-item {
+      margin-bottom: 10px;
+    }
+  
+    ion-button {
+      margin-top: 20px;
+    }
+  }

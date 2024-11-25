@@ -19,18 +19,33 @@
 
   h1 {
     font-size: 28px;
-    font-weight: 800; // Más negrita
+    font-weight: 800;
     margin-bottom: 12px;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra suave para mejor legibilidad
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+.ip-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-dark);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  ion-icon {
+    margin-right: 10px;
+    color: var(--ion-color-primary);
   }
 }
 
-// Categories section with horizontal scroll
 .categories-container {
   position: relative;
   padding: 0 var(--page-padding);
-  margin-bottom: 8px; // Reduced to make space for the indicator
+  margin-bottom: 8px;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -85,7 +100,6 @@
   }
 }
 
-// Scroll indicator
 .scroll-indicator-container {
   width: 100%;
   display: flex;

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input 
+        type="text" 
+        formControlName="username"
+        autocomplete="username">
+      </ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors?.['required']">
+      El usuario es requerido
+    </div>
+    <div class="validation-error" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors?.['minlength']">
+      El usuario debe tener al menos 4 caracteres
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input 
+        type="password" 
+        formControlName="password"
+        autocomplete="new-password">
+      </ion-input>
+    </ion-item>
+    <div class="validation-error" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">
+      La contraseña es requerida
+    </div>
+    <div class="validation-error" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']">
+      La contraseña debe tener al menos 4 caracteres
+    </div>
+
+    <div class="ion-padding">
+      <ion-button 
+        expand="block" 
+        type="submit" 
+        [disabled]="!registerForm.valid || isSubmitting">
+        {{ isSubmitting ? 'Registrando...' : 'Registrar' }}
+      </ion-button>
+
+      <ion-button 
+        expand="block" 
+        fill="clear" 
+        (click)="goToLogin()">
+        Volver al Login
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
