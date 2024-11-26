@@ -19,7 +19,7 @@ export class GeolocalizacionPage implements OnInit {
       };
       
       // Crear URL para Google Maps
-      this.mapUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyA9A2_aqi-nKLJUG1CjNNhUtQoUDYtJNS0&q=${this.coordinates.latitude},${this.coordinates.longitude}`;
+      this.mapUrl = `https://www.google.com/maps/embed/v1/place?key=&q=${this.coordinates.latitude},${this.coordinates.longitude}`;
     } catch (error) {
       console.error('Error al obtener la ubicación:', error);
     }
